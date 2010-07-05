@@ -1,4 +1,5 @@
 <div>
+	<p><img src="<?= $kwp->link_to('~/public/images/pizza.jpg') ?>" /> <br/></p>
 	<p><b>Thank you! Here is a summary of your order.</b></p>
 	<h4>Pizza</h4>
     <table>

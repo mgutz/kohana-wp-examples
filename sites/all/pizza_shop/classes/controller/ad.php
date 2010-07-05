@@ -1,5 +1,5 @@
 <?
-class Controller_Ad extends Controller_App {
+class Controller_Ad extends Controller_KWP {
 	function action_index($which) {
 		if ($which == 'kohana') {
 			$this->request->response = "<h2 style='color: red'>Kohana rules!</h2>";

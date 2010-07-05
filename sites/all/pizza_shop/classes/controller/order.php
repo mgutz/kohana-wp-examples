@@ -1,5 +1,5 @@
 <?php
-class Controller_Order extends Controller_App {
+class Controller_Order extends Controller_KWP {
 
     function action_index() {
 		$this->request->response = $this->view('order/step1');
