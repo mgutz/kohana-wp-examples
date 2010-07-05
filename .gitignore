@@ -3,3 +3,6 @@
 .DS_Store
 *.swo
 *.swp 
+.*.swp
+logs/
+!.gitkeep
