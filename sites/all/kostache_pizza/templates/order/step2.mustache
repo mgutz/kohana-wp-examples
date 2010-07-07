@@ -1,9 +1,9 @@
 <div>
 	<p>	
-		<img src="<?php print $kwp->link_to('~/public/images/pizza.jpg'); ?>" /> <br/>
+		<img src="{{app_url}}/public/images/pizza.jpg" /> <br/>
 	</p>
     <h2>Step 2 - Add Side Items</h2>
-    <form name='order' action="<?php print $kwp->link_to('summary'); ?>" method="POST">
+    <form name='order' action="{{controller_url}}/summary" method="POST">
         <p>
             <label>Item 1</label><br />
             <input name='order[side1]' size="70" />
