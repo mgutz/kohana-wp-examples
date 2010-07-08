@@ -1,5 +1,6 @@
 {{%DOT-NOTATION}}
 <div>
+    {{company}}
 	<p><img src="{{app_url}}/public/images/pizza.jpg" /> <br/></p>
 	<p><b>Thank you! Here is a summary of your order.</b></p>
 	<h4>Pizza</h4>
@@ -16,6 +17,5 @@
         <tr><td>#2</td><td>{{order.side2}}</td></tr>
     </table>
 	
-	<p><b>Total Cost:</b> $9.99</p>
-
+	<p><b>Total Cost:</b> {{total}}</p>
 </div>
