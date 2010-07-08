@@ -2,11 +2,9 @@
 class Controller_Order extends Controller_Mustache {
 	public $company = "Kohana Wild Hawaiian Pizza";
 
-
 	/**
-	 * Example of a normal view that does not require any logic. You do not
-	 * Do not create a separate class, the view() method will isntantiate a
-	 * Mustache class.
+	 * Example of a view that does not require any logic. Mustache is still
+	 * used without the need to create a class.
 	 *
 	 * TODO: should be able to exclude variables
 	 *
@@ -30,6 +28,15 @@ class Controller_Order extends Controller_Mustache {
         $this->render('order/step2');
     }
 
+	/**
+	 * More complex example of a Mustache view which uses a class to format the price into
+	 * a locale. The class itself, view/order/summary.php, is a POPO.
+	 *
+	 * All instance variables ($company) is passed, as well as $order and $price as local
+	 * variables data.
+	 * 
+	 * @return void
+	 */
 	function action_summary() {
 		$order = Arr::merge(get_transient('order'), $_POST['order']);
 

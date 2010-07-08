@@ -9,8 +9,7 @@
 
 
 /**
- * This is an example of code-backed Mustache view. Note that is a plain object with a constructor that accepts
- * an associative array.
+ * This is an example of code-backed Mustache view. Note that is a plain object.
  *
  * Renders summary.mustache
  */
