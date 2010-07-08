@@ -1,4 +1,4 @@
-<?
+<?php
 class Controller_Ad extends Controller_KWP {
 	function action_index($which) {
 		if ($which == 'kohana') {

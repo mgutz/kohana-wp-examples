@@ -19,8 +19,8 @@ class Controller_Order extends Controller_Mustache {
 
 		// render view/order/step1.mustache passing it $motd explicitly, $company implicitly
 		$this->render('order/step1', array('motd' => $motd));
-    }
-
+	}
+	
     function action_step2() {
 		// 15 minutes
 		set_transient('order', $_POST['order'], 15*60);
