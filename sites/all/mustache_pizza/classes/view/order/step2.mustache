@@ -1,10 +1,8 @@
 <div>
-    <h1>{{company}}</h1>
-	<p>	
-		<img src="{{app_url}}/public/images/pizza.jpg" /> <br/>
-	</p>
+    {{> _branding }}
+
     <h2>Step 2 - Add Side Items</h2>
-    <form name='order' action="{{controller_url}}/summary" method="POST">
+    <form name='order' action="{{&controller_url}}/summary" method="POST">
         <p>
             <label>Item 1</label><br />
             <input name='order[side1]' size="70" />
@@ -17,4 +15,6 @@
             <input type="submit" value="Place Order" />
         </p>
     </form>
+
+    {{> ../shared/_footer }}
 </div>

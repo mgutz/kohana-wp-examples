@@ -29,10 +29,10 @@ class Controller_Order extends Controller_Mustache {
     }
 
 	/**
-	 * More complex example of a Mustache view which uses a class to format the price into
+	 * More complex example of a Mustache view which uses a class to format the price using
 	 * a locale. The class itself, view/order/summary.php, is a POPO.
 	 *
-	 * All instance variables ($company) is passed, as well as $order and $price as local
+	 * All instance variables ($company) are passed, as well as $order and $price as local
 	 * variables data.
 	 * 
 	 * @return void
@@ -40,8 +40,9 @@ class Controller_Order extends Controller_Mustache {
 	function action_summary() {
 		$order = Arr::merge(get_transient('order'), $_POST['order']);
 
-		// Use a code-behind class when a view requires some view logic
-		$this->render_class('order/summary', array('order' => $order, 'price' => 9.58));
+		// Since order/summary.php exists, it will be instantiated and used as the code-behind class.
+		// Use a code-behind class when a view requires view logic.
+		$this->render('order/summary', array('order' => $order, 'price' => 9.58));
 	}
 }
 ?>

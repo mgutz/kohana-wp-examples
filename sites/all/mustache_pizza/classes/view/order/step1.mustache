@@ -1,9 +1,9 @@
 <div>
-    <h1>{{company}}</h1>
-    <p><img src="{{{app_url}}}/public/images/pizza.jpg" /></p>
+    {{> _branding }}
+
     <p><b>{{motd}}</b></p>
     <h2>Step 1 - Select Pizza Toppings</h2>
-    <form name='order' action="{{{controller_url}}}/step2" method="POST">
+    <form name='order' action="{{&controller_url}}/step2" method="POST">
         <p>
             <label>Item 1</label><br />
             <input name='order[item1]' size="70" />
@@ -20,4 +20,6 @@
             <input type="submit" value="Next" />
         </p>
     </form>
+
+    {{> ../shared/_footer }}
 </div>

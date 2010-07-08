@@ -1,7 +1,7 @@
 {{%DOT-NOTATION}}
 <div>
-    {{company}}
-	<p><img src="{{app_url}}/public/images/pizza.jpg" /> <br/></p>
+    {{> _branding }}
+
 	<p><b>Thank you! Here is a summary of your order.</b></p>
 	<h4>Pizza</h4>
     <table>
@@ -18,4 +18,6 @@
     </table>
 	
 	<p><b>Total Cost:</b> {{total}}</p>
+    
+    {{> ../shared/_footer }}
 </div>
