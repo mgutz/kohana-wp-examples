@@ -30,4 +30,16 @@ class View_Order_Summary {
 		return Kwp::objectify($this->order['sides']);
 	}
 
+	function instructions() {
+		return $this->order['instructions'];
+	}
+	
+	function has_sides() {
+		foreach ($this->order['sides'] as $side) {
+			if (!empty($side)) return true;
+		}
+		
+		return false;
+	}
+
 }

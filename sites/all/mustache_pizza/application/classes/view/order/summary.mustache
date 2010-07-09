@@ -8,15 +8,21 @@
         {{#items}}
         <tr><td>{{i}}</td><td>{{value}}</td></tr>
         {{/items}}
-        <tr><td><b>Special Instructions</b></td><td>{{order.instructions}}</td></tr>
+        <tr><td><b>Special Instructions</b></td><td>{{instructions}}</td></tr>
     </table>
-	<h4>Side Items</h4>
-    <table>
-        <tr><th>Items</th><th>Description</th></tr>
-        {{#sides}}
-        <tr><td>{{i}}</td><td>{{value}}</td></tr>
-        {{/sides}}
-    </table>
+
+    {{#has_sides}}
+        <h4>Side Items</h4>
+        <table>
+            <tr><th>Items</th><th>Description</th></tr>
+            {{#sides}}
+                <tr><td>{{i}}</td><td>{{value}}</td></tr>
+            {{/sides}}
+        </table>
+    {{/has_sides}}
+    {{^has_sides}}
+        <p>Did you know we also have cheese sticks?</p>
+    {{/has_sides}}
 	
 	<p><b>Total Cost:</b> {{total}}</p>
     
