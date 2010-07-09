@@ -21,4 +21,13 @@ class View_Order_Summary {
 	function total() {
         return '$ ' . number_format($this->price, 2, '.', '');
 	}
+
+	function items() {
+		return Kwp::objectify($this->order['items']);
+	}
+
+	function sides() {
+		return Kwp::objectify($this->order['sides']);
+	}
+
 }

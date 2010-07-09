@@ -5,11 +5,11 @@
     <form name='order' action="{{&controller_url}}/summary" method="POST">
         <p>
             <label>Item 1</label><br />
-            <input name='order[side1]' size="70" />
+            <input name='order[sides][0]' size="70" />
         </p>
         <p>
             <label>Item 2</label><br />
-            <input name='order[side2]' size="70"/>
+            <input name='order[sides][1]' size="70"/>
         </p>
         <p>
             <input type="submit" value="Place Order" />
