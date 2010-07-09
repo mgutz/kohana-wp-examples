@@ -19,7 +19,6 @@ class View_Order_Summary {
 	// Remember, this object gets instance variables as well as local data passed to it. Price is passed in
 	// as part of the render_class call.
 	function total() {
-		setlocale(LC_MONETARY, 'en_US');
-		return money_format('%i', $this->price);
+        return '$ ' . number_format($this->price, 2, '.', '');
 	}
 }
