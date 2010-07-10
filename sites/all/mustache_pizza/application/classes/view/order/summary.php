@@ -9,7 +9,7 @@
 
 
 /**
- * This is an example of code-backed Mustache view. Note that is a plain object.
+ * This is an example of code-backed Mustache view. Note it is a plain object.
  *
  * Renders summary.mustache
  */
@@ -35,10 +35,12 @@ class View_Order_Summary {
 	}
 	
 	function has_sides() {
-		foreach ($this->order['sides'] as $side) {
-			if (!empty($side)) return true;
+		if (!empty($this->order['sides'])) {
+			foreach ($this->order['sides'] as $side) {
+				if (!empty($side)) return true;
+			}
 		}
-		
+
 		return false;
 	}
 

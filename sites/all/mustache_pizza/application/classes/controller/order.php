@@ -2,23 +2,11 @@
 class Controller_Order extends Controller_Mustache {
 	public $company = "Kohana Wild Hawaiian Pizza";
 
-	/**
-	 * Example of a view that does not require any logic. Mustache is still
-	 * used without the need to create a class.
-	 *
-	 * TODO: should be able to exclude variables
-	 *
-	 * By default all instance variables are assigned for use in the template.
-	 * Local variables may be passed as a second argument.
-	 *
-	 * @return void
-	 */
+	// renders view/layout/order.mustache passing:
+	//		content => output of rendering order/step1.mustache
+	//		title => local variable used in layout.mustache
 	function action_index() {
-		// message of the day
-		$motd = "Buy 1 Large Pizza, Get 1 Small Pizza FREE!";
-
-		// render view/order/step1.mustache passing it $motd explicitly, $company implicitly
-		$this->render('order/step1', array('motd' => $motd));
+		$this->render('layout/order', array('content' => $this->render_text('order/step1')));
 	}
 	
     function action_step2() {
@@ -26,7 +14,7 @@ class Controller_Order extends Controller_Mustache {
 		// session variables. Transients serialize/deserialize nicely for simple types.
 		set_transient('order', $_POST['order'], 15*60);
 
-        $this->render('order/step2');
+		$this->render('layout/order', array('content' => $this->render_text('order/step2')));
     }
 
 	/**
@@ -43,7 +31,9 @@ class Controller_Order extends Controller_Mustache {
 
 		// Since order/summary.php exists, it will be instantiated and used as the code-behind class.
 		// Use a code-behind class when a view requires view logic.
-		$this->render('order/summary', array('order' => $order, 'price' => 9.58));
+		$this->render('layout/order', array(
+			'content' => $this->render_text('order/summary', array('order' => $order))
+		));
 	}
 }
 ?>

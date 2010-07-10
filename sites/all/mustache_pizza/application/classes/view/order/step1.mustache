@@ -1,26 +1,18 @@
-<div>
-    {{! renders _branding.mustache }}
-    {{> _branding }}
-
-    <p><b>{{motd}}</b></p>
-    <h2>Step 1 - Select Pizza Toppings</h2>
-    <form name='order' action="{{&controller_url}}/step2" method="POST">
-        <p>
-            <label>Item 1</label><br />
-            <input name='order[items][]' size="70" />
-        </p>
-        <p>
-            <label>Item 2</label><br />
-            <input name='order[items][]' size="70"/>
-        </p>
-        <p>
-            <label>Special Instructions</label><br />
-            <textarea name='order[instructions]' rows="8" cols="70"></textarea>
-        </p>
-        <p>
-            <input type="submit" value="Next" />
-        </p>
-    </form>
-
-    {{> ../shared/_footer }}
-</div>
+<h2>Step 1 - Create Your Pizza</h2>
+<form name='order' action="{{&controller_url}}/step2" method="POST">
+    <p>
+        <label>Item 1</label><br />
+        <input name='order[items][]' style="width:100%" />
+    </p>
+    <p>
+        <label>Item 2</label><br />
+        <input name='order[items][]' style="width:100%" />
+    </p>
+    <p>
+        <label>Special Instructions</label><br />
+        <textarea name='order[instructions]' rows="8" style="width:100%"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Next" />
+    </p>
+</form>
