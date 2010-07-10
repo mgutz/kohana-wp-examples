@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class View_Layout_Order {
+class Views_Layout_Order {
 	public $content;
 	public $step;
 }

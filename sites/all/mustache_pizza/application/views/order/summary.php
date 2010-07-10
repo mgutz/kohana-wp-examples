@@ -14,7 +14,7 @@
  * Renders summary.mustache
  */
 
-class View_Order_Summary {
+class Views_Order_Summary {
 
 	// Remember, this object gets instance variables as well as local data passed to it. Price is passed in
 	// as part of the render_class call.
@@ -23,11 +23,11 @@ class View_Order_Summary {
 	}
 
 	function items() {
-		return Kwp::objectify($this->order['items']);
+		return Kwp::objectify($this->order['items'], 'i', 'value', 1);
 	}
 
 	function sides() {
-		return Kwp::objectify($this->order['sides']);
+		return Kwp::objectify($this->order['sides'], 'i', 'value', 1);
 	}
 
 	function instructions() {

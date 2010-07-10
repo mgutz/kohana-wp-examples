@@ -1,5 +1,5 @@
 <?php
-class Controller_Order extends Controller_Mustache {
+class Controller_Order extends Controller {
 	public $company = "Kohana Wild Hawaiian Pizza";
 
 	// renders view/layout/order.mustache passing:
@@ -32,7 +32,7 @@ class Controller_Order extends Controller_Mustache {
 		// Since order/summary.php exists, it will be instantiated and used as the code-behind class.
 		// Use a code-behind class when a view requires view logic.
 		$this->render('layout/order', array(
-			'content' => $this->render_text('order/summary', array('order' => $order))
+			'content' => $this->render_text('order/summary', array('order' => $order, 'price' => 100000))
 		));
 	}
 }

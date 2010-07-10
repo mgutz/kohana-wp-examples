@@ -1,7 +1,7 @@
 <div>
-	<p><img src="<?php print $kwp->link_to('~/public/images/pizza.jpg'); ?>" /> <br/></p>
+	<p><img src="<?php print KWP_APP_URL.'/public/images/pizza.jpg' ?>" /> <br/></p>
     <h2>Step 1 - Select Pizza Toppings</h2>
-    <form name='order' action="<?php print $kwp->link_to('step2'); ?>" method="POST">
+    <form name='order' action="<?php print KWP_CONTROLLER_URL.'/step2' ?>" method="POST">
         <p>
             <label>Item 1</label><br />
             <input name='order[item1]' size="70" />
