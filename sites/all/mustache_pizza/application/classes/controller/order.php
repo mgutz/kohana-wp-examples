@@ -13,7 +13,7 @@ class Controller_Order extends Controller {
 	 * @return void
 	 */
 	function action_index() {
-		$this->render(array('order/step1', 'layout/order'));
+		$this->render('order/step1');
 	}
 	
     function action_step2() {
@@ -21,7 +21,7 @@ class Controller_Order extends Controller {
 		// session variables. Transients serialize/deserialize nicely for simple types.
 		set_transient('order', $_POST['order'], 15*60);
 
-		$this->render(array('order/step2', 'layout/order'));
+		$this->render('order/step2');
     }
 
 	/**
@@ -39,10 +39,9 @@ class Controller_Order extends Controller {
 		// Since order/summary.php exists, it will be instantiated and used as the code-behind class.
 		// Use a code-behind class when a view requires view logic.
 
-		// local variables are not assigned as context by default, they must be passed in manually
+		// local variables must be passed in manually
 		$locals = array('order' => $order, 'price' => 100000);
-		$this->render(array('order/summary', 'layout/order'), $locals);
+		$this->render('order/summary', $locals);
 	}
 }
-?>
 

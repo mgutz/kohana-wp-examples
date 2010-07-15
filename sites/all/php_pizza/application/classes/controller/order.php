@@ -1,4 +1,7 @@
 <?php
+define('KWP_APP_URL', KWP_Plugin::globals('current_app_url'));
+define('KWP_CONTROLLER_URL', KWP_Plugin::globals('current_controller_url'));
+
 class Controller_Order extends Controller {
 
     function action_index() {
@@ -17,5 +20,3 @@ class Controller_Order extends Controller {
 				->set('order', $order);
 	}
 }
-?>
-

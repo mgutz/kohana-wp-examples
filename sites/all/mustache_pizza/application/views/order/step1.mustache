@@ -1,3 +1,7 @@
+{{< layout/order}}
+
+{{$content}}
+
 <h2>Step 1 - Create Your Pizza</h2>
 <form name='order' action="{{&controller_url}}/step2" method="POST">
     <p>
@@ -16,3 +20,5 @@
         <input type="submit" value="Next" />
     </p>
 </form>
+
+{{/content}}
